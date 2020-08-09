@@ -6,6 +6,8 @@
 
 # In case of new setup on new server
 0. docker network create nginx-proxy
+NOTE: if you are using this network with a docker swarm, use this:
+$ docker network create -d overlay --attachable nginx-proxy
 
 1. run $ curl https://raw.githubusercontent.com/jwilder/nginx-proxy/master/nginx.tmpl > nginx.tmpl
 into the nginx-proxy folder
