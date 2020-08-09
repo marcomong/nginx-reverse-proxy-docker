@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  web:
+    build: 
+      context: ./ui
+    restart: always
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: yourdomain.com
+      LETSENCRYPT_HOST: yourdomain.com
+      LETSENCRYPT_EMAIL: email@yourdomain.com
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
